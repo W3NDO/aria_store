@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   before(:example) do
     @user = User.new(email: "camille@test.com", password: "foobar123_", password_confirmation: "foobar123_")
     @short_pass_user = User.new(email: "camille@test.com", password: "foobar12_", password_confirmation: "foobar12_")

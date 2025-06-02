@@ -8,6 +8,12 @@ RSpec.describe Bid, type: :model do
 
     xit "Fails if bid price is lower that item starting price or item's current highest bid"
 
+    xit "Item owner should not be able to bid on their own item"
+
+    xit "Bid fails if bid price is less than current highest bid or starting bid price" do
+      expect(@bid.save).to be false
+    end
+
     xit "Creates a valid bid"
   end
 end
