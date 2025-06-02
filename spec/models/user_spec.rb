@@ -8,6 +8,10 @@ RSpec.describe User, type: :model do
     @no_num_pass_user = User.new(email: "camille@test.com", password: "foobarfoobar_", password_confirmation: "foobarfoobar_")
     @no_special_char_pass = User.new(email: "camille@test.com", password: "foobarfoobar", password_confirmation: "foobarfoobar")
     @duplicate_user = User.new(email: "camille@test.com", password: "foobar123_", password_confirmation: "foobar123_")
+
+    @item = Item.new(name: "Butterfly Knife", starting_bid: 100.00, user: @user)
+
+    @bid = Bid.new(price: 150.0, user: @user, item: @item)
   end
 
   context "Creating a user" do
@@ -34,10 +38,15 @@ RSpec.describe User, type: :model do
   end
 
   context "Has a valid item attached" do
-    xit "Creates a valid Item association"
+    it "Creates a valid Item association" do
+      expect(@item.save).to be true
+    end
   end
 
   context "Has a valid bid attached" do
-    xit "Creates a valid bid associaiton"
+    it "Creates a valid bid associaiton" do
+      @item.save
+      expect(@bid.save).to be true
+    end
   end
 end
