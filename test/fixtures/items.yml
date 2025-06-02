@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+item_one:
+  name: MyString
+  starting_bid: 100.0
+  current_highest_bid: 0.0
+  closing_bid: 0.0
+  user_id: 1
+
+item_two:
+  name: MyString
+  starting_bid: 100.0
+  current_highest_bid: 0.0
+  closing_bid: 0.0
+  user_id: 2

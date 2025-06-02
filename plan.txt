@@ -1,0 +1,40 @@
+MODELS
+
+    - User (authentication & Authorization)
+        - Buyer/Bidder
+        - Seller
+        - Admin
+    - Item model 
+    - Bids model
+    - Item photos
+
+    *Model Info
+    
+    *Item Model
+        - name
+        - ID
+        - Starting Bid
+        - Current highest Bid
+        - Closing bid/Selling price
+        - Number of bids
+        
+        - has_many item_photos
+        - has_many Bids
+        - Belongs_to user
+
+    * Bids Model
+        - Bid price
+        - Bid Time
+        
+        - Belongs_to user(bidder)
+        - Belongs_to item
+
+    * Item photos model
+        - belongs_to item
+        - has_attachement
+
+    * User model
+        - * from devise
+
+        - has_many items
+        - has_many bids
