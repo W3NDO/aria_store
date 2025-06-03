@@ -17,6 +17,8 @@ MODELS
         - Current highest Bid
         - Closing bid/Selling price
         - Number of bids
+        - * closing time 
+        - * 
         
         - has_many item_photos
         - has_many Bids
@@ -34,7 +36,9 @@ MODELS
         - has_attachement
 
     * User model
-        - * from devise
+        - from devise
+        - * Username
+        - Authenticate with steam
 
         - has_many items
         - has_many bids

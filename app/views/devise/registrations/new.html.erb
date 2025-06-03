@@ -8,8 +8,13 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field flex flex-col justify-between my-2 items-center">
+        <%= f.label :username %><br />
+        <%= f.text_field :username, placeholder: "username", required: true, autofocus: true, autocomplete: "username", class: "p-2 border border-gray-700 rounded-sm" %>
+      </div>
+
+      <div class="field flex flex-col justify-between my-2 items-center">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "p-2 border border-gray-700 rounded-sm" %>
+        <%= f.email_field :email, autofocus: true, placeholder: "myaria@mail.com", autocomplete: "email", class: "p-2 border border-gray-700 rounded-sm" %>
       </div>
 
       <div class="field flex flex-col justify-between my-2 items-center">
