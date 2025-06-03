@@ -8,9 +8,11 @@ RSpec.describe User, type: :model do
     @no_special_char_pass = User.new(email: "camille@test.com", password: "foobarfoobar", password_confirmation: "foobarfoobar")
     @duplicate_user = User.new(email: "camille@test.com", password: "foobar123_", password_confirmation: "foobar123_")
 
-    @item = Item.new(name: "Butterfly Knife", starting_bid: 100.00, user: @user)
+    @item = Item.create!(name: "Butterfly Knife", starting_bid: 100.00, user: @user)
 
-    @bid = Bid.new(price: 150.0, user: @user, item: @item)
+    @bidding_user = User.create!(email: "camille2@test.com", password: "foobar123_", password_confirmation: "foobar123_")
+
+    @bid = Bid.new(price: 150.0, user: @bidding_user, item: @item)
   end
 
   context "Creating a user" do

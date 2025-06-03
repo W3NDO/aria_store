@@ -16,6 +16,10 @@ RSpec.describe Item, type: :model do
 
     @no_user_item=Item.new(name: "Butterfly Knife", starting_bid: 100_000_000.00, user: @non_persisted_user)
 
+    @persisted_item = Item.create!(name: "Butterfly Knife", starting_bid: 100.00, user: @user)
+
+    @bid_updates_item = Bid.new(price: 200.00, user: @user2, item: @persisted_item)
+
     @bid = Bid.new(price: 200.00, user: @user2, item: @item)
   end
 
@@ -39,8 +43,8 @@ RSpec.describe Item, type: :model do
 
   context "New bid associated with item" do
     it "Correctly update the highest bid price of item if bid is valid" do
-      @bid.save
-      expect(@item.current_highest_bid).to eq 200.00
+      expect(@bid_updates_item.save).to be true
+      expect(@persisted_item.current_highest_bid).to eq 200.00
     end
   end
 end
